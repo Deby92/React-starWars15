@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			people: null,
 			demo: [
 				{
 					title: "FIRST",
@@ -37,6 +38,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			getPeople: () => {
+				
 			}
 		}
 	};

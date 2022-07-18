@@ -3,6 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function planets() {
   return (
-    <div>planets</div>
+    <div>Planets</div>
   )
 }
