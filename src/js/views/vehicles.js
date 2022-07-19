@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { Link } from "react-router-dom";
 
-export default function vehicles() {
+export default function Vehicles() {
   return (
     <>
-      <div className="title">
-        <h1>Starships</h1>
-      </div> 
+      <div className="title text-danger">
+        <h1>Vehicles</h1>
+      </div>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         <div className="col">
           <div className="card">
@@ -59,8 +59,8 @@ export default function vehicles() {
             </div>
           </div>
         </div>
-      </div>
+      </div><br></br>
       <Link to="/" class="btn btn-primary">Go Home</Link>
     </>
-  );
+  )
 }

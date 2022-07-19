@@ -4,19 +4,20 @@ import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 export const Home = () => (
-  <>
-    <div class="container-fluid bg-dark text-light p-5">
-    <div class="container bg-dark p-5">
-        <h1 class="display-4">Welcome to my Website</h1>
+	<>{/* not jumbrotron */}
+    <div className="container-fluid text-light p-5">
+    <div className="container-notJumbotron">
+        <h1 className="display-4">Welcome to my Website</h1>
         <br></br>
         <p>Here is the Starwars Characters, Planets and Starships</p>
-        <Link to="#" class="btn btn-info">May the force be with you</Link>
+          <Link to="#" className="btn btn-info">May the force be with you</Link>
     </div>
 	</div>
-	<div className="Title">
+	{/* body */}
+	<div className="title m-3 text-primary">
 		<h1>Characters</h1>
 	</div>
-    <div className="card-group">
+    <div className="card-group m-3">
       <div className="card">
         <img src="..." className="card-img-top" alt="..." />
         <div className="card-body">
@@ -58,10 +59,11 @@ export const Home = () => (
         </div>
       </div>
     </div>
-	<div className="Title">
+	<Link to="/People" className="btn btn-primary m-4">Learn more!</Link>
+	<div className="Title m-3 text-primary">
 		<h1>Planets</h1>
 	</div>
-	<div className="card-group">
+	<div className="card-group m-3">
       <div className="card">
         <img src="..." className="card-img-top" alt="..." />
         <div className="card-body">
@@ -103,10 +105,11 @@ export const Home = () => (
         </div>
       </div>
     </div>
-	<div className="Title">
+	<Link to="/Planets" className="btn btn-primary m-4">Learn more!</Link>
+	<div className="Title m-3 text-primary">
 		<h1>Starships</h1>
 	</div>
-	<div className="card-group">
+	<div className="card-group m-3">
       <div className="card">
         <img src="..." className="card-img-top" alt="..." />
         <div className="card-body">
@@ -148,5 +151,6 @@ export const Home = () => (
         </div>
       </div>
     </div>
+	<Link to="/Vehicles" className="btn btn-primary m-4">Learn more!</Link>
   </>
 );
