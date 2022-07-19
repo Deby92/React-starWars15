@@ -40,6 +40,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			getPeople: () => {
+				fetch("https://swapi.dev/api/people/")
+				.then(response => {
+					return response.json();
+				})
 				
 			}
 		}
