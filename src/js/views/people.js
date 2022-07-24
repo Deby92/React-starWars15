@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
+import { Context } from '../store/appContext';
 
 const People=() => {
-  const [ people, setPeople ] = useState("people");
+  const { store, actions}= useContext(Context);
+  /* const [ people, setPeople ] = useState("people");
   const getPeople = (url) => {
     fetch(url, {
       method: "GET",
@@ -29,10 +31,10 @@ const People=() => {
   useEffect(() => {
     getPeople(urlPeople)
 
-  }, []);
+  }, []); */
 
-  const [ planets, setPlanets ] = useState("planets");
-  const getPlanets = (url) => {
+  /* const [ planets, setPlanets ] = useState("planets"); */
+  /* const getPlanets = (url) => {
     fetch(url, {
       method: "GET",
       headers: {
@@ -58,10 +60,10 @@ const People=() => {
   useEffect(() => {
     getPlanets(urlPlanets)
 
-  }, []);
+  }, []); */
 
-  const [ vehicles, setVehicles ] = useState("vehicles");
-  const getVehicles = (url) => {
+  /* const [ vehicles, setVehicles ] = useState("vehicles"); */
+  /* const getVehicles = (url) => {
     fetch(url, {
       method: "GET",
       headers: {
@@ -80,19 +82,28 @@ const People=() => {
         console.log(error);
       });
   };
-  const urlVehicles="https://swapi.dev/api/vehicles/"
-  const testVehicles =() => {
+   const urlVehicles="https://swapi.dev/api/vehicles/"
+    const testVehicles =() => {
     console.log(vehicles.results)
   }
   useEffect(() => {
     getVehicles(urlVehicles)
 
-  }, []);
+  }, []); */
+  const testVehicles =() => {
+    console.log(store.vehicles.results)
+  }
+  const testPlanets =() => {
+    console.log(store.planets.results)
+  }
+  const testPeople =() => {
+    console.log(store.people.results)
+  }
 
 
   return (
     <>
-    <button onClick={testPleople}>people</button>
+    <button onClick={testPeople}>people</button>
     <button onClick={testPlanets}>planets</button>
     <button onClick={testVehicles}>vehicles</button>
       <div className="title text-danger">

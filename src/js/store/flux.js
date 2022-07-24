@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: null,
 			vehicles: null,
 			demo: [
+				
 				{
 					title: "FIRST",
 					background: "white",
@@ -41,27 +42,63 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
-			getPeople: () => {
-				fetch("https://swapi.dev/api/people/")
-				.then(response => {
-					return response.json();
+			getPeople: (url) => {
+				fetch(url, {
+				  method: "GET",
+				  headers: {
+					"Content-Type": "application/json",
+				  },
 				})
-				
-			},
-			getPlanets: () => {
-				fetch("https://swapi.dev/api/planets/")
-				.then(response => {
+				  .then((response) => {
+					console.log(response);
 					return response.json();
+				  })
+				  .then((data) => {
+					setStore({people:data});
+			
+				  })
+				  .catch((error) => {
+					console.log(error);
+				  });
+			  },
+			  getPlanets: (url) => {
+				fetch(url, {
+				  method: "GET",
+				  headers: {
+					"Content-Type": "application/json",
+				  },
 				})
-				
-			},
-			getVehicles: () => {
-				fetch("https://swapi.dev/api/vehicles/")
-				.then(response => {
+				  .then((response) => {
+					console.log(response);
 					return response.json();
+				  })
+				  .then((data) => {
+					setStore({planets:data});
+			
+				  })
+				  .catch((error) => {
+					console.log(error);
+				  });
+			  },
+			  getVehicles: (url) => {
+				fetch(url, {
+				  method: "GET",
+				  headers: {
+					"Content-Type": "application/json",
+				  },
 				})
-				
-			}
+				  .then((response) => {
+					console.log(response);
+					return response.json();
+				  })
+				  .then((data) => {
+					setStore({vehicles:data});
+			
+				  })
+				  .catch((error) => {
+					console.log(error);
+				  });
+			  },
 		}
 	};
 };
